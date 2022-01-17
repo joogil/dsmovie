@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { Movie } from "types/movie";
 import axios, { AxiosRequestConfig } from "axios";
 import { BASE_URL } from "utils/requests";
@@ -10,8 +10,8 @@ type Props = {
     movieId: string;
 }
 
-function FormCard({ movieId }: Props) {
-    const navigate = useNavigate
+function FormCard({ movieId } : Props) {
+    const navigate = useNavigate();
     const [movie, setMovie] = useState<Movie>();
 
     useEffect(() => {
@@ -42,8 +42,8 @@ function FormCard({ movieId }: Props) {
         }
 
         axios(config).then(response => {
-
-        })
+            navigate("/");
+        });
     }
 
     return (

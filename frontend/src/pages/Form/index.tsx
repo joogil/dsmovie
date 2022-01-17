@@ -6,7 +6,7 @@ function Form() {
     const params = useParams()
 
     return (
-        <FormCard moveId={`${params.moveId}`} />
+        <FormCard movieId={`${params.movieId}`} />
     );
 }
 
